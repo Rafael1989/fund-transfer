@@ -1,0 +1,13 @@
+{
+	"iban": "ASDASD12389172322",
+	"accountType": "CURRENT",
+	"description": "Current Account",
+	"name": "Account name",
+	"holder": "Rafael",
+	"balance": "1000",
+	"limitAccount": "100",
+	"bic": "3424234324",
+	"customer": {
+		"customerId": 1231232
+	}
+}
