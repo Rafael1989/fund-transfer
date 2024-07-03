@@ -14,15 +14,15 @@ import com.hcltech.fundtransfer.repositories.CustomerRepository;
 
 @Configuration
 public class ApplicationConfiguration {
-    private final CustomerRepository userRepository;
+    private final CustomerRepository customerRepository;
 
     public ApplicationConfiguration(CustomerRepository userRepository) {
-        this.userRepository = userRepository;
+        this.customerRepository = userRepository;
     }
 
     @Bean
     UserDetailsService userDetailsService() {
-        return username -> userRepository.findByCustomerId(Long.parseLong(username))
+        return username -> customerRepository.findByCustomerId(Long.parseLong(username))
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
