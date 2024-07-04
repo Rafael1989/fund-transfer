@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "4e1eea29-586a-47c4-9c1b-3b88d06e7859",
+		"name": "fundtransfer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4791647"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": \"123123999\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"Rafael\",\r\n    \"lastName\" : \"Romao Bertoni\",\r\n    \"email\": \"rrbertoni89@gmail.com\",\r\n    \"phone\": \"+491722286111\",\r\n    \"address\": {\r\n        \"postalCode\": \"60222\",\r\n        \"street\": \"Ghoethestrasse\",\r\n        \"number\": \"2\",\r\n        \"complement\": \"3 floor\",\r\n        \"neighborhood\": \"Innenstadt\",\r\n        \"city\": {\r\n            \"name\": \"Frankfurt am Main\",\r\n            \"state\": {\r\n                \"name\": \"Hessen\",\r\n                \"country\": {\r\n                    \"name\": \"Germany\"\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": \"1231232\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "get customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customers/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Accounts resume",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts/resume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"resume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accounts by iban",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts/ASDASD12389172381",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"ASDASD12389172381"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transactions by iban",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts/ASDASD12389172381/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"ASDASD12389172381",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction by iban and transaction id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts/ASDASD12389172381/transaction/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"ASDASD12389172381",
+								"transaction",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iban\": \"ASDASD12389172389999\",\r\n    \"accountType\": \"CURRENT\",\r\n    \"description\": \"Current Account\",\r\n    \"name\": \"Account name\",\r\n    \"holder\": \"Rafael\",\r\n    \"balance\": \"1000\",\r\n    \"limitAccount\": \"100\",\r\n    \"bic\": \"3424234324\",\r\n    \"customer\": {\r\n        \"customerId\": 1231232\r\n    }\r\n    \r\n\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account transfer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMyIiwiaWF0IjoxNzIwMDI0OTM0LCJleHAiOjE3MjAxMTEzMzR9.su1572HK8xvV1im892NvNdoUmNrqJyW3D6pKN177fNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"originAccount\": \"ASDASD12389172381\",\r\n    \"destinationAccount\": \"ASDASD1238917238999\",\r\n    \"amount\": \"1000\",\r\n    \"comments\": \"Transferencia\",\r\n    \"today\": \"2024-08-03 11:42\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounts/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
